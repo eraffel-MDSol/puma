@@ -67,6 +67,7 @@ module Puma
       string_block << " #{text}" if text
       string_block << " (#{request_title(req)})" if request_parsed?(req)
       string_block << ": #{error.inspect}" if error
+      string_block << "| #{error.backtrace}" if error
       string_block.join('')
     end
 
